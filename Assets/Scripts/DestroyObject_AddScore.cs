@@ -33,9 +33,9 @@ public class DestroyObject_AddScore : MonoBehaviour
         }
 
     }
-    // if collides with "Truck" collider = activate above
-    void OnCollisionEnter(Collision col)
 
+    // if collides with "Truck" collider = activate above
+    void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Truck") // Pickupis pakko olla gameobject boxcollider mis tagi "Truck"
         {
