@@ -33,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            Debug.Log("Left Shift key was pressed");
-            
             movement = new Vector3(Input.GetAxis("Horizontal") * SprintSpeed * Time.deltaTime, 0, Input.GetAxis("Vertical") * SprintSpeed * Time.deltaTime);
             moveMe.transform.Translate(movement);
         }
