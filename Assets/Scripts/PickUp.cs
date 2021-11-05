@@ -6,9 +6,10 @@ public class PickUp : MonoBehaviour
 {
     public Transform Destination;
     public Rigidbody CubeRb;
+    public Camera cam;
 
 
-    void OnMouseDown()
+    public void PickItemUp()
     {
         //These ones freeze and disable collider once you pick up the object
         GetComponent<BoxCollider>().enabled = false;
@@ -25,7 +26,7 @@ public class PickUp : MonoBehaviour
         CubeRb.angularVelocity = Vector3.zero;
         
     }
-    void OnMouseUp()
+    public void DropItem()
     {
         //These ones unfreeze when you drop it
         this.transform.parent = null;
@@ -36,4 +37,10 @@ public class PickUp : MonoBehaviour
 
 
     }
+    public void ThrowItem(Vector3 direction, float throwForce)
+    {
+        DropItem();
+        CubeRb.AddForce(direction * throwForce, ForceMode.Impulse);
+    }
+
 }
