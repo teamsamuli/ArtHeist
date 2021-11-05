@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.45f;
     public LayerMask groundMask;
 
-    
+    float moveX, moveZ;
 
 
     // Start is called before the first frame update
@@ -27,14 +27,22 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        movement = new Vector3(Input.GetAxis("Horizontal") * MovementSpeed * Time.deltaTime, 0, Input.GetAxis("Vertical") * MovementSpeed * Time.deltaTime);
-        moveMe.transform.Translate(movement);
+        //Get input
+        moveX = Input.GetAxis("Horizontal");
+        moveZ = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        //Get move direction
+        Vector3 moveDir = transform.right * moveX + transform.forward * moveZ;
+      
+        if (Input.GetKey(KeyCode.LeftShift)) //Run
         {
-            movement = new Vector3(Input.GetAxis("Horizontal") * SprintSpeed * Time.deltaTime, 0, Input.GetAxis("Vertical") * SprintSpeed * Time.deltaTime);
-            moveMe.transform.Translate(movement);
+            movement = moveDir * SprintSpeed;
+            moveMe.transform.Translate(movement * Time.deltaTime, Space.World);
+        }
+        else //Walk
+        {
+            movement = moveDir * MovementSpeed;
+            moveMe.transform.Translate(movement * Time.deltaTime, Space.World);
         }
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
