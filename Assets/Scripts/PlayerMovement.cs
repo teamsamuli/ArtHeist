@@ -31,25 +31,28 @@ public class PlayerMovement : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
 
-        //Get move direction
-        Vector3 moveDir = transform.right * moveX + transform.forward * moveZ;
-      
-        if (Input.GetKey(KeyCode.LeftShift)) //Run
-        {
-            movement = moveDir * SprintSpeed;
-            moveMe.transform.Translate(movement * Time.deltaTime, Space.World);
-        }
-        else //Walk
-        {
-            movement = moveDir * MovementSpeed;
-            moveMe.transform.Translate(movement * Time.deltaTime, Space.World);
-        }
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+
+
+        if (Input.GetButtonDown("Jump") && IsGrounded()) //Jump
         { 
             rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
         }
     
+    }
+    private void FixedUpdate()
+    {
+        //Get move direction
+        Vector3 moveDir = transform.right * moveX + transform.forward * moveZ;
+
+        if (Input.GetKey(KeyCode.LeftShift)) //Run 
+        {
+            rb.MovePosition(transform.position + moveDir * Time.deltaTime * SprintSpeed);
+        }
+        else //Walk
+        {
+            rb.MovePosition(transform.position + moveDir * Time.deltaTime * MovementSpeed);
+        }
     }
     bool IsGrounded()
     {
