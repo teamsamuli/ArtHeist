@@ -17,9 +17,11 @@ public class Guard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Get components
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
+        //Setup stats for agent
         agent.speed = speed;
         agent.angularSpeed = angularSpeed;
     }
@@ -29,6 +31,7 @@ public class Guard : MonoBehaviour
     {
         anim.SetBool("Moving", IsMoving());
 
+        //Debug keys
         if (Input.GetKeyDown(KeyCode.W))
             SetTargetDestination(new Vector3(10, 0, 0));
         else if (Input.GetKeyDown(KeyCode.S))
