@@ -6,16 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject moveMe;
     Rigidbody rb;
-    public float MovementSpeed = 10f;
-    public float SprintSpeed = 20f;
+    public float walkSpeed = 10f;
+    public float sprintSpeed = 20f;
     public float jumpHeight = 3f;
-    private Vector3 movement = new Vector3(0f, 0f, 0f);
     public Transform groundCheck;
     public float groundDistance = 0.45f;
     public LayerMask groundMask;
 
     float moveX, moveZ;
-
+    float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +30,14 @@ public class PlayerMovement : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
 
+        //Apply walk speed
+        moveSpeed = walkSpeed;
 
+        //Override to run speed
+        if (Input.GetKey(KeyCode.LeftShift))
+            moveSpeed = sprintSpeed;
 
-
+        //Jump
         if (Input.GetButtonDown("Jump") && IsGrounded()) //Jump
         { 
             rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
@@ -45,14 +49,12 @@ public class PlayerMovement : MonoBehaviour
         //Get move direction
         Vector3 moveDir = transform.right * moveX + transform.forward * moveZ;
 
-        if (Input.GetKey(KeyCode.LeftShift)) //Run 
-        {
-            rb.MovePosition(transform.position + moveDir * Time.deltaTime * SprintSpeed);
-        }
-        else //Walk
-        {
-            rb.MovePosition(transform.position + moveDir * Time.deltaTime * MovementSpeed);
-        }
+        //Add force
+        rb.AddForce(moveDir, ForceMode.Impulse);
+
+        //Clamp movement
+        Vector3 horizontalVelocity = new Vector3(moveDir.x * moveSpeed, rb.velocity.y, moveDir.z * moveSpeed);
+        rb.velocity = horizontalVelocity;
     }
     bool IsGrounded()
     {
