@@ -6,10 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject moveMe;
     Rigidbody rb;
-    private float MovementSpeed = 10f;
-
+    public float MovementSpeed = 10f;
+    public float SprintSpeed = 20f;
     public float jumpHeight = 3f;
-
+    private Vector3 movement = new Vector3(0f, 0f, 0f);
     public Transform groundCheck;
     public float groundDistance = 0.45f;
     public LayerMask groundMask;
@@ -27,9 +27,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.GetAxis("Horizontal"));
-        Vector3 Movements = new Vector3(Input.GetAxis("Horizontal") * MovementSpeed * Time.deltaTime, 0, Input.GetAxis("Vertical") * MovementSpeed * Time.deltaTime);
-        moveMe.transform.Translate(Movements);
+        
+        movement = new Vector3(Input.GetAxis("Horizontal") * MovementSpeed * Time.deltaTime, 0, Input.GetAxis("Vertical") * MovementSpeed * Time.deltaTime);
+        moveMe.transform.Translate(movement);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Debug.Log("Left Shift key was pressed");
+            
+            movement = new Vector3(Input.GetAxis("Horizontal") * SprintSpeed * Time.deltaTime, 0, Input.GetAxis("Vertical") * SprintSpeed * Time.deltaTime);
+            moveMe.transform.Translate(movement);
+        }
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         { 
