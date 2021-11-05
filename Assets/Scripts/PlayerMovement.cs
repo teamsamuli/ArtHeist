@@ -5,12 +5,19 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject moveMe;
+    Rigidbody rb;
     private float MovementSpeed = 10f;
+    private float gravity = -9.81f;
+
+    public float jumpHeight = 3f;
+
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();   
     }
 
     // Update is called once per frame
