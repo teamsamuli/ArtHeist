@@ -8,11 +8,15 @@ public class Guard : MonoBehaviour
     NavMeshAgent agent;
     Animator anim;
 
+    List<Rigidbody> limbs = new List<Rigidbody>();
+    List<Collider> cols = new List<Collider>();
+
     public float speed = 5f;
     public float angularSpeed = 360f;
     public float attackDelay = 0.5f;
 
     bool attacking;
+    bool isAlive = true;
     
     // Start is called before the first frame update
     void Start()
@@ -20,6 +24,22 @@ public class Guard : MonoBehaviour
         //Get components
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+
+        //Get limb rigidbodies
+        foreach(Rigidbody rb in GetComponentsInChildren<Rigidbody>())
+        {
+            if (!limbs.Contains(rb)) limbs.Add(rb);
+
+            rb.isKinematic = true;
+        }
+
+        //Get limb colliders
+        foreach(Collider col in GetComponentsInChildren<Collider>())
+        {
+            if (!cols.Contains(col)) cols.Add(col);
+
+            col.isTrigger = true;
+        }
 
         //Setup stats for agent
         agent.speed = speed;
@@ -38,6 +58,8 @@ public class Guard : MonoBehaviour
             SetTargetDestination(new Vector3(0, 0, 10));
         else if (Input.GetKeyDown(KeyCode.Space))
             Attack();
+        else if (Input.GetKeyDown(KeyCode.K))
+            Die();
     }
 
     bool IsMoving()
@@ -69,5 +91,29 @@ public class Guard : MonoBehaviour
 
         agent.speed = speed;
         attacking = false;
+    }
+
+    public void Die()
+    {
+        isAlive = false;
+        anim.enabled = false;
+        agent.enabled = false;
+
+        EnableRagdoll();
+    }
+
+    void EnableRagdoll()
+    {
+        //Make rigidbodies react to physics
+        foreach(Rigidbody rb in limbs)
+        {
+            rb.isKinematic = false;
+        }
+
+        //Make colliders collide
+        foreach(Collider col in cols)
+        {
+            col.isTrigger = false;
+        }
     }
 }
