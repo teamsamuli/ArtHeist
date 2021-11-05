@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    PickUp pickUp;
+
     public float mouseSensitivity = 100f;
-    public GameObject destination;
+
     public Transform playerBody;
-    public LayerMask Objects;
+
     float xRotation = 0f;
 
     // Start is called before the first frame update
@@ -32,32 +32,5 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
-
-
-     
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, Objects))
-            {
-                Debug.Log(hit.transform.name);
-                pickUp = hit.transform.GetComponent<PickUp>();
-                pickUp.PickItemUp();
-            }
-        }    
-        if (Input.GetMouseButtonDown(1))
-        {
-            pickUp.DropItem();
-        }
-        if (destination.transform.childCount > 0)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                pickUp.ThrowItem(transform.forward, 10f);
-            }
-        }
-
     }
-
 }

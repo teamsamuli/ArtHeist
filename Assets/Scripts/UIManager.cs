@@ -7,7 +7,6 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI healthText;
     public Image timerFill;
 
     // Start is called before the first frame update
@@ -19,6 +18,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + Score.score;
+        
     }
 }
