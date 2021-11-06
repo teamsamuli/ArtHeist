@@ -22,7 +22,7 @@ public class Guard : MonoBehaviour
 
     bool attacking;
     bool isChasing;
-    bool isAlive = true;
+    public bool isAlive = true;
     Transform target;
     
     // Start is called before the first frame update

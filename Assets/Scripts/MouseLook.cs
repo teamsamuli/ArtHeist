@@ -7,13 +7,19 @@ public class MouseLook : MonoBehaviour
     PickUp pickUp;
     Rigidbody rb;
 
-    public float mouseSensitivity = 100f;
+
+    public float mouseSensitivity = 2f;
     public GameObject destination;
     public Transform playerBody;
     public LayerMask Objects;
 
+    
     float mouseX, mouseY;
     float xRotation = 0f;
+
+    float chargeTimer = 0f;
+    float chargeTimeMax = 1f;
+    public float throwForce = 25f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +35,9 @@ public class MouseLook : MonoBehaviour
     void Update()
     {
         //Get mouse movement
-        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-       
+        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+
         //Apply vertical rotation and clamp it
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
@@ -43,29 +49,55 @@ public class MouseLook : MonoBehaviour
         //Pick up item
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
+           
 
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, Objects))
+            if (checkIfInDist())
             {
-                Debug.Log(hit.transform.name);
-                pickUp = hit.transform.GetComponent<PickUp>();
-                pickUp.PickItemUp();
+                chargeTimer = 0.0f;
+                pickUp.PickItemUp(destination.transform);
+
             }
-        }    
-
-        //Drop item
-        if (Input.GetMouseButtonDown(1))
-        {
-            pickUp.DropItem();
         }
-
-        //Throw item
         if (destination.transform.childCount > 0)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+
+            //Drop item
+            if (Input.GetMouseButtonDown(1))
             {
-                pickUp.ThrowItem(transform.forward, 10f);
+                pickUp.DropItem();
             }
+            //Charge timer starts
+            if (Input.GetMouseButton(0))
+            {
+                chargeTimer += Time.deltaTime;
+                if (chargeTimer >= chargeTimeMax)
+                {
+                    chargeTimer = chargeTimeMax;
+                }
+            }
+            //Throws with the force of the timer
+            if (Input.GetMouseButtonUp(0) && chargeTimer >= 0.2f)
+            {
+                Throw();
+            }
+
         }
+    }
+    void Throw()
+    {
+        float throwMult = chargeTimer / chargeTimeMax;
+        pickUp.ThrowItem(transform.forward, throwForce * throwMult);
+        
+    }
+    bool checkIfInDist()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, Objects))
+        {
+            pickUp = hit.transform.GetComponent<PickUp>();
+            return true;
+        }
+        return false;
     }
 }

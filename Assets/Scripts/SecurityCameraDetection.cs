@@ -16,13 +16,12 @@ public class SecurityCameraDetection : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Detaction");
+        // If the collision is with player, alert a guard to player position
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             WaypointManager.SetPriorityWaypoint(other.gameObject.transform.position);
-            Debug.Log("Detaction is player");
         }
     }
 }

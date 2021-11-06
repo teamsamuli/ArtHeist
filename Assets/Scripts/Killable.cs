@@ -5,14 +5,24 @@ using UnityEngine;
 public class Killable : MonoBehaviour
 {
     public float health = 100f;
-    public float minforce = 11f;
+    public float noDMG = 20f;
+    public float smallDMG = 10f;
+    public float maxDMG = 0f;
 
     void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.relativeVelocity.magnitude > minforce)
+        if (collision.relativeVelocity.magnitude > maxDMG )
         {
             TakeDamage(50);
+        }
+        else if (collision.relativeVelocity.magnitude < maxDMG && collision.relativeVelocity.magnitude > noDMG)
+        {
+            TakeDamage(20);
+        }
+        else if (collision.relativeVelocity.magnitude < noDMG)
+        {
+            TakeDamage(0);
         }
     }
 
