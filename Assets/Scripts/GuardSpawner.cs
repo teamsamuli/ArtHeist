@@ -11,6 +11,11 @@ public class GuardSpawner : MonoBehaviour
     public Guard GuardTemplate;
 
     /// <summary>
+    /// List for allowed guard spawn points.
+    /// </summary>
+    public List<Transform> SpawnPoints;
+
+    /// <summary>
     /// List of spawned guards
     /// </summary>
     private List<Guard> SpawnedGuards;
@@ -63,9 +68,17 @@ public class GuardSpawner : MonoBehaviour
 
     private void SpawnNewGuards(int howMany)
     {
+        // If no defined spawn points, then just spawn where the GuardHandler game object is located
+        Transform spawnPoint = gameObject.transform;
+
         for (int i = 0; i < howMany; i++)
         {
-            Guard newGuard = Instantiate(GuardTemplate, gameObject.transform.position, Quaternion.identity);
+            if (SpawnPoints.Count >= i+1) // Use spawn points if they have been defined
+            {
+                spawnPoint = SpawnPoints[i];
+            }
+
+            Guard newGuard = Instantiate(GuardTemplate, spawnPoint.position, Quaternion.identity);
             SpawnedGuards.Add(newGuard);
         }
     }

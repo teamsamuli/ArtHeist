@@ -46,45 +46,48 @@ public class MouseLook : MonoBehaviour
 
         //Pick up item
         if (Input.GetMouseButtonDown(0))
-        {         
+        {
             if (IsLookingObject())
             {
-                chargeTimer = 0.0f;
-
                 pickUp.PickItemUp(destination.transform);
             }
         }
-
-        if (destination.transform.childCount > 0)
+        else
         {
-            //Drop item
-            if (Input.GetMouseButtonDown(1))
+            if (destination.transform.childCount > 0)
             {
-                pickUp.DropItem();
-            }
-
-            //Charge timer starts
-            if (Input.GetMouseButton(0))
-            {
-                chargeTimer += Time.deltaTime;
-                if (chargeTimer >= chargeTimeMax)
+                //Drop item
+                if (Input.GetMouseButtonDown(1))
                 {
-                    chargeTimer = chargeTimeMax;
+                    pickUp.DropItem();
                 }
-            }
 
-            //Throws with the force of the timer
-            if (Input.GetMouseButtonUp(0) && chargeTimer >= 0.2f)
-            {
-                Throw();
+                //Charge timer starts
+                if (Input.GetMouseButton(0))
+                {
+                    chargeTimer += Time.deltaTime;
+                    if (chargeTimer >= chargeTimeMax)
+                    {
+                        chargeTimer = chargeTimeMax;
+                    }
+                }
+
+                //Throws with the force of the timer
+                if (Input.GetMouseButtonUp(0))
+                {
+                    if (chargeTimer > 0.2f) Throw();
+                    else chargeTimer = 0;
+                }
             }
         }
     }
 
     void Throw()
     {
-        float throwMult = chargeTimer / chargeTimeMax;
-        pickUp.ThrowItem(transform.forward, throwForce * throwMult);    
+        Vector3 throwDir = transform.forward + (Vector3.up / 4f);
+        pickUp.ThrowItem(throwDir, throwForce * GetThrowMult());
+
+        chargeTimer = 0;
     }
 
     public bool IsLookingObject()
@@ -98,5 +101,10 @@ public class MouseLook : MonoBehaviour
         }
 
         return false;
+    }
+
+    public float GetThrowMult()
+    {
+        return chargeTimer / chargeTimeMax;
     }
 }

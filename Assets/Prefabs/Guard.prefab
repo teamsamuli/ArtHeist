@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   angularSpeed: 360
+  damage: 20
   attackDelay: 0.5
   attackRange: 1.4
   spotInterval: 0.5
@@ -111,13 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e41150b640b06d4aa97c57a23b64067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 50
   noDMG: 20
   smallDMG: 10
   maxDMG: 0
-  objectsMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!136 &8799528387841629621
 CapsuleCollider:
   m_ObjectHideFlags: 0
