@@ -40,7 +40,8 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded()) //Jump
             rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);  
     }
-    private void FixedUpdate()
+
+    void FixedUpdate()
     {
         //Get move direction
         Vector3 moveDir = transform.right * moveX + transform.forward * moveZ;
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 horizontalVelocity = new Vector3(moveDir.x * moveSpeed, rb.velocity.y, moveDir.z * moveSpeed);
         rb.velocity = horizontalVelocity;
     }
+
     bool IsGrounded()
     {
         if (Physics.CheckSphere(groundCheck.position, groundDistance, groundMask)) return true;
