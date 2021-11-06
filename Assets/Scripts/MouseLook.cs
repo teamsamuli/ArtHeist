@@ -7,11 +7,8 @@ public class MouseLook : MonoBehaviour
     PickUp pickUp;
     Rigidbody rb;
 
-<<<<<<< Updated upstream
-    public float mouseSensitivity = 1.5f;
-=======
+
     public float mouseSensitivity = 2f;
->>>>>>> Stashed changes
     public GameObject destination;
     public Transform playerBody;
     public LayerMask Objects;
@@ -40,11 +37,7 @@ public class MouseLook : MonoBehaviour
         //Get mouse movement
         mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-<<<<<<< Updated upstream
-       
-=======
 
->>>>>>> Stashed changes
         //Apply vertical rotation and clamp it
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
