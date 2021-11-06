@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
-    MouseLook mouseLook;
+
     public float walkSpeed = 4f;
     public float sprintSpeed = 8f;
     public float jumpHeight = 3f;
@@ -15,13 +15,11 @@ public class PlayerMovement : MonoBehaviour
 
     float moveX, moveZ;
     float moveSpeed;
-    
-    public GameObject destination;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();   
     }
 
     // Update is called once per frame
@@ -37,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = walkSpeed;
 
             //Override to run speed
-            if (Input.GetKey(KeyCode.LeftShift) && moveZ > 0 && destination.transform.childCount == 0)
+            if (Input.GetKey(KeyCode.LeftShift) && moveZ > 0)
                 moveSpeed = sprintSpeed;
 
             //Jump
