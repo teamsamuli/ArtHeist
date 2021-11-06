@@ -120,6 +120,11 @@ public class Guard : MonoBehaviour
         return false;
     }
 
+    public bool IsChasing()
+    {
+        return isChasing;
+    }
+
     public void SetTargetDestination(Vector3 targetPos)
     {
         agent.SetDestination(targetPos);
