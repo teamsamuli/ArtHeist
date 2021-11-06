@@ -7,6 +7,7 @@ public class MouseLook : MonoBehaviour
     PickUp pickUp;
     public float mouseSensitivity = 100f;
     public GameObject destination;
+    public Transform cameraPos;
     public Transform playerBody;
     public LayerMask Objects;
     float xRotation = 0f;
@@ -33,8 +34,7 @@ public class MouseLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
 
-
-     
+        //Pick up item
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -46,10 +46,14 @@ public class MouseLook : MonoBehaviour
                 pickUp.PickItemUp();
             }
         }    
+
+        //Drop item
         if (Input.GetMouseButtonDown(1))
         {
             pickUp.DropItem();
         }
+
+        //Throw item
         if (destination.transform.childCount > 0)
         {
             if (Input.GetKeyDown(KeyCode.E))
