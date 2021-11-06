@@ -109,14 +109,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3decf84921e285b479573b5c0b931292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 10
-  sprintSpeed: 20
+  walkSpeed: 7
+  sprintSpeed: 10
   jumpHeight: 7
   groundCheck: {fileID: 607598258282979493}
   groundDistance: 0.45
   groundMask:
     serializedVersion: 2
     m_Bits: 1
+  destination: {fileID: 2047074337566031359}
 --- !u!136 &2047074337682972169
 CapsuleCollider:
   m_ObjectHideFlags: 0
