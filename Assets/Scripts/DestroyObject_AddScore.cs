@@ -4,34 +4,40 @@ using UnityEngine;
 
 public class DestroyObject_AddScore : MonoBehaviour
 {
-    private bool destroyBlock = false;
+    Collider col;
+    MeshRenderer mesh;
+
     public AudioSource tickSource;
+    public int scoreAmount = 10;
 
+    bool destroyBlock = false;
 
+    void Start()
+    {
+        //Get collider & meshrenderer
+        col = GetComponent<Collider>();
+        if (col == null) col = GetComponentInChildren<Collider>();
+
+        mesh = GetComponent<MeshRenderer>();
+        if (mesh == null) mesh = GetComponentInChildren<MeshRenderer>();
+    }
 
     // Update is called once per frame
-
     void Update()
-
     {
-
         if (destroyBlock)
-
         {
-
             destroyBlock = false;
 
-            GetComponent<MeshRenderer>().enabled = false;
-
-            GetComponent<Collider>().enabled = false;
+            //Hide mesh & disable collider
+            mesh.enabled = false;
+            col.enabled = false;
 
             Destroy(gameObject, 2);
 
-            Score.score++;
+            Score.score += scoreAmount;
             tickSource.Play();
-
         }
-
     }
 
     // if collides with "Truck" collider = activate above
