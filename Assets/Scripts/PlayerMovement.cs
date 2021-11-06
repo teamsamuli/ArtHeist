@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GameObject moveMe;
     Rigidbody rb;
-    public float MovementSpeed = 10f;
-    public float SprintSpeed = 20f;
+
+    public float walkSpeed = 10f;
+    public float sprintSpeed = 20f;
     public float jumpHeight = 3f;
-    private Vector3 movement = new Vector3(0f, 0f, 0f);
     public Transform groundCheck;
     public float groundDistance = 0.45f;
     public LayerMask groundMask;
 
     float moveX, moveZ;
-
+    float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();   
-
     }
 
     // Update is called once per frame
@@ -30,30 +28,37 @@ public class PlayerMovement : MonoBehaviour
         //Get input
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
+       
+        if (IsGrounded())
+        {
+            //Apply walk speed
+            moveSpeed = walkSpeed;
 
+            //Override to run speed
+            if (Input.GetKey(KeyCode.LeftShift) && moveZ > 0)
+                moveSpeed = sprintSpeed;
 
-
-
-        if (Input.GetButtonDown("Jump") && IsGrounded()) //Jump
-        { 
-            rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+            //Jump
+            if (Input.GetButtonDown("Jump"))
+                rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
         }
-    
     }
-    private void FixedUpdate()
+
+    void FixedUpdate()
     {
         //Get move direction
         Vector3 moveDir = transform.right * moveX + transform.forward * moveZ;
+        moveDir = Vector3.ClampMagnitude(moveDir, 1f);
 
-        if (Input.GetKey(KeyCode.LeftShift)) //Run 
-        {
-            rb.MovePosition(transform.position + moveDir * Time.deltaTime * SprintSpeed);
-        }
-        else //Walk
-        {
-            rb.MovePosition(transform.position + moveDir * Time.deltaTime * MovementSpeed);
-        }
+        //Add force
+        rb.AddForce(moveDir, ForceMode.Impulse);
+
+        //Clamp movement
+        float verticalVelocity = Mathf.Clamp(rb.velocity.y, float.MinValue, jumpHeight);
+        Vector3 horizontalVelocity = new Vector3(moveDir.x * moveSpeed, verticalVelocity, moveDir.z * moveSpeed);
+        rb.velocity = horizontalVelocity;
     }
+
     bool IsGrounded()
     {
         if (Physics.CheckSphere(groundCheck.position, groundDistance, groundMask)) return true;

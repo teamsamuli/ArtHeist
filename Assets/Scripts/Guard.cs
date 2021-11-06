@@ -14,9 +14,16 @@ public class Guard : MonoBehaviour
     public float speed = 5f;
     public float angularSpeed = 360f;
     public float attackDelay = 0.5f;
+    public float attackRange = 1f;
+    public float spotInterval = 0.5f;
+    public float spotRadius = 5f;
+    public LayerMask playerMask;
+    float lastTimeSpotted;
 
     bool attacking;
-    bool isAlive = true;
+    bool isChasing;
+    public bool isAlive = true;
+    Transform target;
     
     // Start is called before the first frame update
     void Start()
@@ -24,6 +31,7 @@ public class Guard : MonoBehaviour
         //Get components
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        target = FindObjectOfType<PlayerMovement>().transform;
 
         //Get limb rigidbodies
         foreach(Rigidbody rb in GetComponentsInChildren<Rigidbody>())
@@ -34,11 +42,16 @@ public class Guard : MonoBehaviour
         }
 
         //Get limb colliders
+        Collider myCol = GetComponent<Collider>();
+
         foreach(Collider col in GetComponentsInChildren<Collider>())
         {
-            if (!cols.Contains(col)) cols.Add(col);
+            if (col != myCol)
+            {
+                if (!cols.Contains(col)) cols.Add(col);
 
-            col.isTrigger = true;
+                col.isTrigger = true;
+            } 
         }
 
         //Setup stats for agent
@@ -49,17 +62,54 @@ public class Guard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetBool("Moving", IsMoving());
+        if (isAlive)
+        {
+            //Update animations
+            anim.SetBool("Moving", IsMoving());
 
-        //Debug keys
-        if (Input.GetKeyDown(KeyCode.W))
-            SetTargetDestination(new Vector3(10, 0, 0));
-        else if (Input.GetKeyDown(KeyCode.S))
-            SetTargetDestination(new Vector3(0, 0, 10));
-        else if (Input.GetKeyDown(KeyCode.Space))
-            Attack();
-        else if (Input.GetKeyDown(KeyCode.K))
-            Die();
+            //Try to spot
+            if (Time.time >= lastTimeSpotted + spotInterval)
+            {
+                lastTimeSpotted = Time.time;
+
+                //Check sphere player
+                Vector3 checkPos = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
+                if (Physics.CheckSphere(checkPos, spotRadius, playerMask))
+                {
+                    isChasing = true;
+                    SetTargetDestination(target.position);
+                }
+                else
+                {
+                    isChasing = false;
+                }          
+            }
+
+            //Get next waypoint if not chasing player
+            if (!isChasing)
+            {
+                if (agent.remainingDistance < 0.25f)
+                {
+                    SetTargetDestination(WaypointManager.waypoint.GetRandomWaypoint());
+                }
+            }
+
+            //Try to attack
+            if (isChasing)
+            {
+                float distance = Vector3.Distance(transform.position, target.position);
+                if (distance <= attackRange)
+                {
+                    Attack();
+                }
+            }
+
+            //Debug keys
+            if (Input.GetKeyDown(KeyCode.Space))
+                Attack();
+            else if (Input.GetKeyDown(KeyCode.K))
+                Die();
+        }
     }
 
     bool IsMoving()
