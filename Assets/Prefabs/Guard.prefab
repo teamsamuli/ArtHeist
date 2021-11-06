@@ -884,6 +884,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hurtSound: {fileID: 8300000, guid: 37da53be39b89754dba8bbd7035a4618, type: 3}
   dieSound: {fileID: 8300000, guid: 157be102714242249959b428f31c372e, type: 3}
+  finnishSounds:
+  - {fileID: 8300000, guid: 376d85e84ddf13047bb9ac0167d659f7, type: 3}
+  - {fileID: 8300000, guid: c5af3567a388b6441889fff32bbcac7a, type: 3}
+  - {fileID: 8300000, guid: a661d31f73c67b645a74521a31d98ad4, type: 3}
+  - {fileID: 8300000, guid: bc5f77e9c28e1b44286492faac0ebc76, type: 3}
+  - {fileID: 8300000, guid: ae1742ac14816454b98cc4e0766904c5, type: 3}
+  - {fileID: 8300000, guid: 18c5763c624459945b2ebc899ae543f5, type: 3}
+  - {fileID: 8300000, guid: 95d916e917a99034499a6682bf746f8f, type: 3}
+  - {fileID: 8300000, guid: e0d091c959b03ce408028f0e12064c5c, type: 3}
   speed: 8
   angularSpeed: 360
   damage: 20
@@ -894,9 +903,6 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 64
-  spottingMask:
-    serializedVersion: 2
-    m_Bits: 65
   isAlive: 1
 --- !u!114 &6773338798927843457
 MonoBehaviour:

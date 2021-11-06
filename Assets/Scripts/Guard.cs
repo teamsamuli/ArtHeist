@@ -16,6 +16,7 @@ public class Guard : MonoBehaviour
     [Header("Audio")]
     public AudioClip hurtSound;
     public AudioClip dieSound;
+    public AudioClip[] finnishSounds;
 
     [Header("Stats")]
     public float speed = 5f;
@@ -85,7 +86,9 @@ public class Guard : MonoBehaviour
                 if (Physics.CheckSphere(checkPos, spotRadius, playerMask))
                 {
                     isChasing = true;
-                    SetTargetDestination(target.position);               
+                    SetTargetDestination(target.position);
+
+                    PlayRandomFinnish();
                 }
                 else
                 {
@@ -123,6 +126,12 @@ public class Guard : MonoBehaviour
     public bool IsChasing()
     {
         return isChasing;
+    }
+
+    void PlayRandomFinnish()
+    {
+        if (!audioSrc.isPlaying)
+            audioSrc.PlayOneShot(finnishSounds[Random.Range(0, finnishSounds.Length)], 1f);
     }
 
     public void SetTargetDestination(Vector3 targetPos)
