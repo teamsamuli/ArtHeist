@@ -90,6 +90,12 @@ MonoBehaviour:
   speed: 5
   angularSpeed: 360
   attackDelay: 0.5
+  attackRange: 1.4
+  spotInterval: 0.5
+  spotRadius: 10
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &673699904200532346
 PrefabInstance:
   m_ObjectHideFlags: 0

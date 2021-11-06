@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GameObject moveMe;
     Rigidbody rb;
+
     public float walkSpeed = 10f;
     public float sprintSpeed = 20f;
     public float jumpHeight = 3f;
@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();   
-
     }
 
     // Update is called once per frame
@@ -39,10 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Jump
         if (Input.GetButtonDown("Jump") && IsGrounded()) //Jump
-        { 
-            rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
-        }
-    
+            rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);  
     }
     private void FixedUpdate()
     {
