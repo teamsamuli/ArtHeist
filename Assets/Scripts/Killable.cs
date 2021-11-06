@@ -10,29 +10,18 @@ public class Killable : MonoBehaviour
     public float noDMG = 20f;
     public float smallDMG = 10f;
     public float maxDMG = 0f;
-    public LayerMask objectsMask;
 
     void Start()
     {
-<<<<<<< Updated upstream
-        if (collision.gameObject.layer == objectsMask)
-=======
         guard = GetComponent<Guard>();
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.magnitude > maxDMG )
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Objects"))
         {
-            TakeDamage(50);
-        }
-        else if (collision.relativeVelocity.magnitude < maxDMG && collision.relativeVelocity.magnitude > noDMG)
-        {
-            TakeDamage(20);
-        }
-        else if (collision.relativeVelocity.magnitude < noDMG)
->>>>>>> Stashed changes
-        {
+            Debug.Log("Took damage :D");
+
             if (collision.relativeVelocity.magnitude > maxDMG)
             {
                 TakeDamage(50);
