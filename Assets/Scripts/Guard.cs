@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Guard : MonoBehaviour
 {
+    UIManager UI;
     AudioSource audioSrc;
     NavMeshAgent agent;
     Animator anim;
@@ -16,6 +17,7 @@ public class Guard : MonoBehaviour
     [Header("Audio")]
     public AudioClip hurtSound;
     public AudioClip dieSound;
+    public Subtitle[] subtitles;
 
     [Header("Stats")]
     public float speed = 5f;
@@ -37,6 +39,7 @@ public class Guard : MonoBehaviour
     void Start()
     {
         //Get components
+        UI = FindObjectOfType<UIManager>();
         audioSrc = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
@@ -85,7 +88,9 @@ public class Guard : MonoBehaviour
                 if (Physics.CheckSphere(checkPos, spotRadius, playerMask))
                 {
                     isChasing = true;
-                    SetTargetDestination(target.position);               
+                    SetTargetDestination(target.position);
+
+                    PlayRandomFinnish();
                 }
                 else
                 {
@@ -123,6 +128,16 @@ public class Guard : MonoBehaviour
     public bool IsChasing()
     {
         return isChasing;
+    }
+
+    void PlayRandomFinnish()
+    {
+        Subtitle randomSubtitle = subtitles[Random.Range(0, subtitles.Length)];
+
+        UI.UpdateSubtitles(randomSubtitle.text);
+
+        if (!audioSrc.isPlaying)
+            audioSrc.PlayOneShot(randomSubtitle.audio, 1f);
     }
 
     public void SetTargetDestination(Vector3 targetPos)

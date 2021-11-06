@@ -5,6 +5,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     PickUp pickUp;
+    PlayerMovement player;
 
     public float mouseSensitivity = 2f;
     public GameObject destination;
@@ -21,6 +22,8 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponentInParent<PlayerMovement>();
+
         //Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -47,9 +50,11 @@ public class MouseLook : MonoBehaviour
             {
                 pickUp.PickItemUp(destination.transform);
 
+                player.PlayRandomEstonian();
+
                 //If first time picking up item, start timer & game
                 if (!GameManager.game.gameStarted)
-                    GameManager.game.gameStarted = true;
+                    GameManager.game.StartGame();               
             }
         }
         else

@@ -9,9 +9,18 @@ public class UIManager : MonoBehaviour
     MouseLook mouselook;
     Killable killable;
 
+    [Header("Subtitles")]
+    public TextMeshProUGUI subtitleText;
+    public CanvasGroup subtitleGroup;
+    public float subtitleShowTime = 2f;
+    float lastTimeSubtitlesShown;
+
+    [Header("Texts")]
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI healthText;    
+    public TextMeshProUGUI healthText;  
     public GameObject pickUpText;
+
+    [Header("Fills")]
     public Image timerFill;
     public Image throwBarFill;
 
@@ -20,6 +29,9 @@ public class UIManager : MonoBehaviour
     {
         mouselook = transform.parent.GetComponentInChildren<MouseLook>();
         killable = transform.parent.GetComponentInChildren<Killable>();
+
+        //Hide subtitle
+        subtitleGroup.alpha = 0;
     }
 
     // Update is called once per frame
@@ -39,5 +51,19 @@ public class UIManager : MonoBehaviour
 
         //Update timer
         timerFill.fillAmount = GameManager.game.GetTimeMultLeft();
+
+        //Hide subtitles after short delay
+        if (Time.time >= lastTimeSubtitlesShown + subtitleShowTime)
+        {
+            subtitleGroup.alpha = Mathf.MoveTowards(subtitleGroup.alpha, 0, 1f * Time.deltaTime);
+        }
+    }
+
+    public void UpdateSubtitles(string text)
+    {
+        lastTimeSubtitlesShown = Time.time;
+        subtitleGroup.alpha = 1f;
+
+        subtitleText.text = text;
     }
 }
