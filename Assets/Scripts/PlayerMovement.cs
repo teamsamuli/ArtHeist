@@ -5,7 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
+    AudioSource audioSrc;
 
+    [Header("Audio")]
+    public AudioClip[] estonianSounds;
+
+    [Header("Stats")]
     public float walkSpeed = 4f;
     public float sprintSpeed = 8f;
     public float jumpHeight = 3f;
@@ -19,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();   
+        rb = GetComponent<Rigidbody>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -63,5 +69,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Physics.CheckSphere(groundCheck.position, groundDistance, groundMask)) return true;
         return false;
+    }
+
+    public void PlayRandomEstonian()
+    {
+        audioSrc.PlayOneShot(estonianSounds[Random.Range(0, estonianSounds.Length)], 1f);
     }
 }
