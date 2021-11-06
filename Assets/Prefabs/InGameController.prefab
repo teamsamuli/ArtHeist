@@ -355,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2047074337682972171}
   mouselook: {fileID: 7917537543950179356}
-  smoothingSpeed: 50
+  smoothingSpeed: 100
 --- !u!1 &7917537543950179347
 GameObject:
   m_ObjectHideFlags: 0
