@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI healthText;    
     public GameObject pickUpText;
     public Image timerFill;
+    public Image throwBarFill;
 
     // Start is called before the first frame update
     void Start()
@@ -32,5 +33,8 @@ public class UIManager : MonoBehaviour
 
         //Update pick up text
         pickUpText.SetActive(mouselook.IsLookingObject());
+
+        //Update throw fill
+        throwBarFill.fillAmount = mouselook.GetThrowMult();
     }
 }

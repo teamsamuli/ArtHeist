@@ -10,6 +10,7 @@ public class Guard : MonoBehaviour
 
     List<Rigidbody> limbs = new List<Rigidbody>();
     List<Collider> cols = new List<Collider>();
+    Collider myCol;
 
     public float speed = 5f;
     public float angularSpeed = 360f;
@@ -43,7 +44,7 @@ public class Guard : MonoBehaviour
         }
 
         //Get limb colliders
-        Collider myCol = GetComponent<Collider>();
+        myCol = GetComponent<Collider>();
         foreach(Collider col in GetComponentsInChildren<Collider>())
         {
             if (col != myCol)
@@ -155,6 +156,7 @@ public class Guard : MonoBehaviour
         isAlive = false;
         anim.enabled = false;
         agent.enabled = false;
+        myCol.enabled = false;
 
         EnableRagdoll();
     }
