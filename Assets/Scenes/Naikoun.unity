@@ -5366,6 +5366,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -21.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4955103416509700439, guid: 4e962202b5742654bacf7f0bb79afd70, type: 3}
+      propertyPath: noDMG
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955103416509700439, guid: 4e962202b5742654bacf7f0bb79afd70, type: 3}
+      propertyPath: smallDMG
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7917537545379948680, guid: 4e962202b5742654bacf7f0bb79afd70, type: 3}
       propertyPath: m_Name
       value: InGameController
@@ -5413,6 +5421,10 @@ PrefabInstance:
     - target: {fileID: 7917537545379948681, guid: 4e962202b5742654bacf7f0bb79afd70, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452991294492676668, guid: 4e962202b5742654bacf7f0bb79afd70, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e962202b5742654bacf7f0bb79afd70, type: 3}

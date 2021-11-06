@@ -13,6 +13,7 @@ public class Guard : MonoBehaviour
 
     public float speed = 5f;
     public float angularSpeed = 360f;
+    public float damage = 20f;
     public float attackDelay = 0.5f;
     public float attackRange = 1f;
     public float spotInterval = 0.5f;
@@ -43,7 +44,6 @@ public class Guard : MonoBehaviour
 
         //Get limb colliders
         Collider myCol = GetComponent<Collider>();
-
         foreach(Collider col in GetComponentsInChildren<Collider>())
         {
             if (col != myCol)
@@ -133,12 +133,19 @@ public class Guard : MonoBehaviour
 
     IEnumerator StartAttacking()
     {
+        //Play animation and stop guard
         anim.SetTrigger("Attack");
         agent.speed = 0;
         attacking = true;
 
-        yield return new WaitForSeconds(attackDelay);
+        yield return new WaitForSeconds(attackDelay / 2);
 
+        //Damage player
+        target.GetComponent<Killable>().TakeDamage(damage);
+
+        yield return new WaitForSeconds(attackDelay / 2);
+
+        //Continue movement
         agent.speed = speed;
         attacking = false;
     }

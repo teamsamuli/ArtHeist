@@ -5,6 +5,7 @@ using UnityEngine;
 public class Killable : MonoBehaviour
 {
     Guard guard;
+    PlayerMovement player;
 
     public float health = 100f;
     public float noDMG = 20f;
@@ -14,10 +15,15 @@ public class Killable : MonoBehaviour
     void Start()
     {
         guard = GetComponent<Guard>();
+        player = GetComponent<PlayerMovement>();
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        //Dont do this if player
+        if (player != null)
+            return;
+
         if (collision.gameObject.layer == LayerMask.NameToLayer("Objects"))
         {
             Debug.Log("Took damage :D");

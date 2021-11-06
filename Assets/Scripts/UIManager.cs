@@ -7,6 +7,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     MouseLook mouselook;
+    Killable killable;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;    
@@ -17,6 +18,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         mouselook = transform.parent.GetComponentInChildren<MouseLook>();
+        killable = transform.parent.GetComponentInChildren<Killable>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,9 @@ public class UIManager : MonoBehaviour
     {
         //Score text
         scoreText.text = "Score: " + Score.score;
+
+        //Health text
+        healthText.text = "Health: " + killable.health.ToString("F0");
 
         //Update pick up text
         pickUpText.SetActive(mouselook.IsLookingObject());
