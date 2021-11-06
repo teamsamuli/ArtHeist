@@ -54,13 +54,8 @@ public class MouseLook : MonoBehaviour
             if (checkIfInDist())
             {
                 chargeTimer = 0.0f;
-<<<<<<< Updated upstream
-
-                pickUp = hit.transform.GetComponent<PickUp>();
                 pickUp.PickItemUp(destination.transform);
-=======
-                pickUp.PickItemUp();
->>>>>>> Stashed changes
+
             }
         }
         if (destination.transform.childCount > 0)
