@@ -57,7 +57,7 @@ public class MouseLook : MonoBehaviour
                 chargeTimer = 0.0f;
 
                 pickUp = hit.transform.GetComponent<PickUp>();
-                pickUp.PickItemUp();
+                pickUp.PickItemUp(destination.transform);
             }
         }
         if (destination.transform.childCount > 0)
