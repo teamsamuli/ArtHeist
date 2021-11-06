@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39bba32dac62c6543afd0b1daf43ea3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GuardTemplate: {fileID: 8424392013203617413, guid: f2ef2bb8792f82245bb0452712967006, type: 3}
-  SpawnPoints: []
+  GuardTemplate: {fileID: 673699903441808411, guid: f2ef2bb8792f82245bb0452712967006, type: 3}
   NumberOfActiveGuards: 3
   SpawnDelay: 10
 --- !u!114 &2437956522470224224

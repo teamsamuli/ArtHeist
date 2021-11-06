@@ -140,5 +140,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a919e1cbac121e498a1ff46f078dcb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spyMusic: {fileID: 8300000, guid: ff825b0b0acdf6f4e8ac4cb1772aa80f, type: 3}
-  chaseMusic: {fileID: 8300000, guid: 82172faa49d20424e94ef50030fcedf1, type: 3}
+  notSpottedMusic: {fileID: 8300000, guid: 4fb9b170dfbb1fd49a7476c98cbdf3b4, type: 3}
+  spottedMusic: {fileID: 0}
