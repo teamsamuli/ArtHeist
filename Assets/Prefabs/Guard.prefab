@@ -861,6 +861,9 @@ Rigidbody:
   playerMask:
     serializedVersion: 2
     m_Bits: 64
+  spottingMask:
+    serializedVersion: 2
+    m_Bits: 65
   isAlive: 1
 --- !u!114 &2328288820946635295
 MonoBehaviour:

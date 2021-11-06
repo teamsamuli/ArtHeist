@@ -36,5 +36,8 @@ public class UIManager : MonoBehaviour
 
         //Update throw fill
         throwBarFill.fillAmount = mouselook.GetThrowMult();
+
+        //Update timer
+        timerFill.fillAmount = GameManager.game.GetTimeMultLeft();
     }
 }

@@ -80,17 +80,17 @@ public class Guard : MonoBehaviour
             {
                 lastTimeSpotted = Time.time;
 
-                //Check sphere player
+                //Check if player is near
                 Vector3 checkPos = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
                 if (Physics.CheckSphere(checkPos, spotRadius, playerMask))
                 {
                     isChasing = true;
-                    SetTargetDestination(target.position);
+                    SetTargetDestination(target.position);               
                 }
                 else
                 {
                     isChasing = false;
-                }          
+                }                    
             }
 
             //Get next waypoint if not chasing player

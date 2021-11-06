@@ -5,7 +5,6 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     PickUp pickUp;
-    Rigidbody rb;
 
     public float mouseSensitivity = 2f;
     public GameObject destination;
@@ -22,9 +21,6 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Get player rigidbody
-        rb = GetComponentInParent<Rigidbody>();
-
         //Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -50,6 +46,10 @@ public class MouseLook : MonoBehaviour
             if (IsLookingObject())
             {
                 pickUp.PickItemUp(destination.transform);
+
+                //If first time picking up item, start timer & game
+                if (!GameManager.game.gameStarted)
+                    GameManager.game.gameStarted = true;
             }
         }
         else
