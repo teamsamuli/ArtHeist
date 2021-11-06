@@ -430,6 +430,9 @@ MonoBehaviour:
   noDMG: 5
   smallDMG: 7
   maxDMG: 10
+  objectsMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!136 &540926792
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -773,6 +776,9 @@ MonoBehaviour:
   noDMG: 5
   smallDMG: 7
   maxDMG: 10
+  objectsMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!136 &2020499413
 CapsuleCollider:
   m_ObjectHideFlags: 0
