@@ -79,7 +79,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3decf84921e285b479573b5c0b931292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveMe: {fileID: 1442898068733798162}
   walkSpeed: 10
   sprintSpeed: 20
   jumpHeight: 4
@@ -244,12 +243,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e23c3b0587e5964dab3e2d8e10b8498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 750
-  destination: {fileID: 0}
+  mouseSensitivity: 2
+  destination: {fileID: 1442898069117994215}
   playerBody: {fileID: 1442898068733798163}
   Objects:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+  throwForce: 15
 --- !u!1 &8110716780173453317
 GameObject:
   m_ObjectHideFlags: 0
