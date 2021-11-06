@@ -40,7 +40,7 @@ public class Killable : MonoBehaviour
             {
                 TakeDamage(0);
             }
-        }
+        }   
     }
 
     public void TakeDamage(float amount)

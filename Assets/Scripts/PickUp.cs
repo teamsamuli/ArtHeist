@@ -12,7 +12,7 @@ public class PickUp : MonoBehaviour
         //Get rigidbody and collider
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-
+        if (col == null) col = GetComponentInChildren<Collider>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
     }
 
