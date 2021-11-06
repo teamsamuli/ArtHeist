@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickSource: {fileID: 0}
+  scoreAmount: 20
 --- !u!1001 &8785852333138398640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,6 +127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: da063b3eb56fc5140bd3b001d4ed8e8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e660018b8a43aec48997d154befda6de, type: 2}
     - target: {fileID: 919132149155446097, guid: da063b3eb56fc5140bd3b001d4ed8e8b, type: 3}
       propertyPath: m_Name
       value: VaseClosed
