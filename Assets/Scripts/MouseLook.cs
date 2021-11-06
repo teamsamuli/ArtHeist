@@ -94,7 +94,7 @@ public class MouseLook : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, Objects))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, Objects) && destination.transform.childCount == 0)
         {
             pickUp = hit.transform.GetComponent<PickUp>();
             return true;
