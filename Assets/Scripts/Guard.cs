@@ -42,11 +42,16 @@ public class Guard : MonoBehaviour
         }
 
         //Get limb colliders
+        Collider myCol = GetComponent<Collider>();
+
         foreach(Collider col in GetComponentsInChildren<Collider>())
         {
-            if (!cols.Contains(col)) cols.Add(col);
+            if (col != myCol)
+            {
+                if (!cols.Contains(col)) cols.Add(col);
 
-            col.isTrigger = true;
+                col.isTrigger = true;
+            } 
         }
 
         //Setup stats for agent

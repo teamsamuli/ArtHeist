@@ -7,13 +7,11 @@ public class MouseLook : MonoBehaviour
     PickUp pickUp;
     Rigidbody rb;
 
-
     public float mouseSensitivity = 2f;
     public GameObject destination;
     public Transform playerBody;
     public LayerMask Objects;
-
-    
+   
     float mouseX, mouseY;
     float xRotation = 0f;
 
@@ -48,24 +46,23 @@ public class MouseLook : MonoBehaviour
 
         //Pick up item
         if (Input.GetMouseButtonDown(0))
-        {
-           
-
-            if (checkIfInDist())
+        {         
+            if (IsLookingObject())
             {
                 chargeTimer = 0.0f;
-                pickUp.PickItemUp(destination.transform);
 
+                pickUp.PickItemUp(destination.transform);
             }
         }
+
         if (destination.transform.childCount > 0)
         {
-
             //Drop item
             if (Input.GetMouseButtonDown(1))
             {
                 pickUp.DropItem();
             }
+
             //Charge timer starts
             if (Input.GetMouseButton(0))
             {
@@ -75,21 +72,22 @@ public class MouseLook : MonoBehaviour
                     chargeTimer = chargeTimeMax;
                 }
             }
+
             //Throws with the force of the timer
             if (Input.GetMouseButtonUp(0) && chargeTimer >= 0.2f)
             {
                 Throw();
             }
-
         }
     }
+
     void Throw()
     {
         float throwMult = chargeTimer / chargeTimeMax;
-        pickUp.ThrowItem(transform.forward, throwForce * throwMult);
-        
+        pickUp.ThrowItem(transform.forward, throwForce * throwMult);    
     }
-    bool checkIfInDist()
+
+    public bool IsLookingObject()
     {
         RaycastHit hit;
 
@@ -98,6 +96,7 @@ public class MouseLook : MonoBehaviour
             pickUp = hit.transform.GetComponent<PickUp>();
             return true;
         }
+
         return false;
     }
 }
