@@ -28,29 +28,34 @@ public class PlayerMovement : MonoBehaviour
         //Get input
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
+       
+        if (IsGrounded())
+        {
+            //Apply walk speed
+            moveSpeed = walkSpeed;
 
-        //Apply walk speed
-        moveSpeed = walkSpeed;
+            //Override to run speed
+            if (Input.GetKey(KeyCode.LeftShift) && moveZ > 0)
+                moveSpeed = sprintSpeed;
 
-        //Override to run speed
-        if (Input.GetKey(KeyCode.LeftShift))
-            moveSpeed = sprintSpeed;
-
-        //Jump
-        if (Input.GetButtonDown("Jump") && IsGrounded()) //Jump
-            rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);  
+            //Jump
+            if (Input.GetButtonDown("Jump"))
+                rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+        }
     }
 
     void FixedUpdate()
     {
         //Get move direction
         Vector3 moveDir = transform.right * moveX + transform.forward * moveZ;
+        moveDir = Vector3.ClampMagnitude(moveDir, 1f);
 
         //Add force
         rb.AddForce(moveDir, ForceMode.Impulse);
 
         //Clamp movement
-        Vector3 horizontalVelocity = new Vector3(moveDir.x * moveSpeed, rb.velocity.y, moveDir.z * moveSpeed);
+        float verticalVelocity = Mathf.Clamp(rb.velocity.y, float.MinValue, jumpHeight);
+        Vector3 horizontalVelocity = new Vector3(moveDir.x * moveSpeed, verticalVelocity, moveDir.z * moveSpeed);
         rb.velocity = horizontalVelocity;
     }
 

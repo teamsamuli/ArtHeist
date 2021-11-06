@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 10
   sprintSpeed: 20
-  jumpHeight: 4
+  jumpHeight: 7
   groundCheck: {fileID: 607598258282979493}
   groundDistance: 0.45
   groundMask:
