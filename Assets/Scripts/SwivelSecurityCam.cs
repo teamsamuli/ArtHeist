@@ -83,4 +83,5 @@ public class SwivelSecurityCam : MonoBehaviour
             RotatedDegrees = 0; // Reset the rotation tracking to prevent overrotating
         }
     }
+
 }
