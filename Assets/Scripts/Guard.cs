@@ -94,9 +94,7 @@ public class Guard : MonoBehaviour
                     SetTargetDestination(WaypointManager.waypoint.GetRandomWaypoint());
                 }
             }
-
-            //Try to attack
-            if (isChasing)
+            else //Try to attack
             {
                 float distance = Vector3.Distance(transform.position, target.position);
                 if (distance <= attackRange)
@@ -104,12 +102,6 @@ public class Guard : MonoBehaviour
                     Attack();
                 }
             }
-
-            //Debug keys
-            if (Input.GetKeyDown(KeyCode.Space))
-                Attack();
-            else if (Input.GetKeyDown(KeyCode.K))
-                Die();
         }
     }
 
