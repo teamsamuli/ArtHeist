@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e421f3f57c4cc3148bcfc71fdae2a4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeDelayBetweenRotations: 10
+  RotateByDegrees: 90
 --- !u!1 &2427961262196979449
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2427961262196979448}
   - component: {fileID: 2427961262196979455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SecurityView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
