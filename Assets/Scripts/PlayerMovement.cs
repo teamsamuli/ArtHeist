@@ -6,9 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
     AudioSource audioSrc;
+    UIManager UI;
 
     [Header("Audio")]
-    public AudioClip[] estonianSounds;
+    public Subtitle[] subtitles;
 
     [Header("Stats")]
     public float walkSpeed = 4f;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         audioSrc = GetComponent<AudioSource>();
+        UI = transform.parent.GetComponentInChildren<UIManager>();
     }
 
     // Update is called once per frame
@@ -73,6 +75,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayRandomEstonian()
     {
-        audioSrc.PlayOneShot(estonianSounds[Random.Range(0, estonianSounds.Length)], 1f);
+        Subtitle randomSubtitle = subtitles[Random.Range(0, subtitles.Length)];
+        UI.UpdateSubtitles(randomSubtitle.text);
+
+        audioSrc.PlayOneShot(randomSubtitle.audio, 1f);
     }
 }
