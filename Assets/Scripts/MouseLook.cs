@@ -84,7 +84,9 @@ public class MouseLook : MonoBehaviour
 
     void Throw()
     {
-        pickUp.ThrowItem(transform.forward, throwForce * GetThrowMult());
+        Vector3 throwDir = transform.forward + (Vector3.up / 4f);
+        pickUp.ThrowItem(throwDir, throwForce * GetThrowMult());
+
         chargeTimer = 0;
     }
 
