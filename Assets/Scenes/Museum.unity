@@ -2404,6 +2404,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2437956522470224226, guid: 4300490efeb262442af807da992534b8, type: 3}
+      propertyPath: GuardTemplate
+      value: 
+      objectReference: {fileID: 8424392013203617413, guid: f2ef2bb8792f82245bb0452712967006, type: 3}
     - target: {fileID: 2437956522470224227, guid: 4300490efeb262442af807da992534b8, type: 3}
       propertyPath: m_Name
       value: GuardHandler

@@ -49,7 +49,7 @@ public class MouseLook : MonoBehaviour
 
                 //If first time picking up item, start timer & game
                 if (!GameManager.game.gameStarted)
-                    GameManager.game.gameStarted = true;
+                    GameManager.game.StartGame();               
             }
         }
         else

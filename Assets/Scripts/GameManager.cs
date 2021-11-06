@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     {
         if (game == null) game = this;
 
+        audioSrc = GetComponent<AudioSource>();
+
         timeLeft = maxTime * 60f;
     }
 
@@ -28,16 +30,29 @@ public class GameManager : MonoBehaviour
         if (gameStarted)
         {
             //Timer
-            if (timeLeft > 0)
+            if (!gameEnded)
             {
-                timeLeft -= Time.deltaTime;
-                if (timeLeft < 0) timeLeft = 0;
-            }
-            else
-            {
-                gameEnded = true;
+                if (timeLeft > 0)
+                {
+                    timeLeft -= Time.deltaTime;
+                    if (timeLeft < 0) timeLeft = 0;
+                }
+                else
+                {
+                    gameEnded = true;
+
+                    audioSrc.Stop();
+                }
             }
         }
+    }
+
+    public void StartGame()
+    {
+        gameStarted = true;
+
+        audioSrc.Play();
+        audioSrc.loop = true;
     }
 
     public float GetTimeMultLeft()
