@@ -235,8 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39bba32dac62c6543afd0b1daf43ea3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GuardTemplate: {fileID: 673699903441808388, guid: f2ef2bb8792f82245bb0452712967006, type: 3}
-  SpawnedGuards: []
+  GuardTemplate: {fileID: 673699903441808411, guid: f2ef2bb8792f82245bb0452712967006, type: 3}
+  NumberOfActiveGuards: 3
+  SpawnDelay: 10
 --- !u!4 &827903982
 Transform:
   m_ObjectHideFlags: 0
