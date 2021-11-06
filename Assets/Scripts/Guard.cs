@@ -120,6 +120,11 @@ public class Guard : MonoBehaviour
         return false;
     }
 
+    public bool IsChasing()
+    {
+        return isChasing;
+    }
+
     public void SetTargetDestination(Vector3 targetPos)
     {
         agent.SetDestination(targetPos);
@@ -165,6 +170,7 @@ public class Guard : MonoBehaviour
     public void Die()
     {
         isAlive = false;
+        isChasing = false;
         anim.enabled = false;
         agent.enabled = false;
         myCol.enabled = false;
