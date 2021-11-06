@@ -1,10 +1,14 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &673699903441808388
 =======
 --- !u!1 &8424392013203617434
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+--- !u!1 &673699903441808388
+>>>>>>> parent of be7723d (Working musicplayer)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,6 +17,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of be7723d (Working musicplayer)
   - component: {fileID: 673699903441808389}
   - component: {fileID: 673699903441808410}
   - component: {fileID: 673699903441808408}
@@ -20,6 +27,7 @@ GameObject:
   - component: {fileID: 2665605474478385154}
   - component: {fileID: 673699903441808411}
   - component: {fileID: 2328288820946635295}
+<<<<<<< HEAD
 =======
   - component: {fileID: 8424392013203617435}
   - component: {fileID: 8424392013203617412}
@@ -29,6 +37,8 @@ GameObject:
   - component: {fileID: 8424392013203617413}
   - component: {fileID: 6773338798927843457}
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+>>>>>>> parent of be7723d (Working musicplayer)
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -37,24 +47,33 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &673699903441808389
 =======
 --- !u!4 &8424392013203617435
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+--- !u!4 &673699903441808389
+>>>>>>> parent of be7723d (Working musicplayer)
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 673699903441808388}
 =======
   m_GameObject: {fileID: 8424392013203617434}
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+  m_GameObject: {fileID: 673699903441808388}
+>>>>>>> parent of be7723d (Working musicplayer)
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - {fileID: 1068425149174974097}
   m_Father: {fileID: 0}
@@ -68,16 +87,27 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &8424392013203617412
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+  - {fileID: 1068425149174974097}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &673699903441808410
+>>>>>>> parent of be7723d (Working musicplayer)
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 673699903441808388}
 =======
   m_GameObject: {fileID: 8424392013203617434}
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+  m_GameObject: {fileID: 673699903441808388}
+>>>>>>> parent of be7723d (Working musicplayer)
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.4
@@ -94,10 +124,14 @@ NavMeshAgent:
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!95 &673699903441808408
 =======
 --- !u!95 &8424392013203617414
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+--- !u!95 &673699903441808408
+>>>>>>> parent of be7723d (Working musicplayer)
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -105,10 +139,14 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 673699903441808388}
 =======
   m_GameObject: {fileID: 8424392013203617434}
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+  m_GameObject: {fileID: 673699903441808388}
+>>>>>>> parent of be7723d (Working musicplayer)
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 521ff4525a177dc449b5f3fcc6f27af5, type: 3}
   m_Controller: {fileID: 9100000, guid: 4e6e96ac12db892449a18e29a4e8e8ce, type: 2}
@@ -121,20 +159,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!136 &8799528387841629621
 =======
 --- !u!136 &553434687758567211
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+--- !u!136 &8799528387841629621
+>>>>>>> parent of be7723d (Working musicplayer)
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 673699903441808388}
 =======
   m_GameObject: {fileID: 8424392013203617434}
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+  m_GameObject: {fileID: 673699903441808388}
+>>>>>>> parent of be7723d (Working musicplayer)
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -143,20 +189,28 @@ CapsuleCollider:
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!82 &2665605474478385154
 =======
 --- !u!82 &6435124445708317340
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+--- !u!82 &2665605474478385154
+>>>>>>> parent of be7723d (Working musicplayer)
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 673699903441808388}
 =======
   m_GameObject: {fileID: 8424392013203617434}
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+  m_GameObject: {fileID: 673699903441808388}
+>>>>>>> parent of be7723d (Working musicplayer)
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -247,23 +301,27 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &673699903441808411
 MonoBehaviour:
 =======
 --- !u!114 &8424392013203617413
+=======
+--- !u!114 &673699903441808411
+>>>>>>> parent of be7723d (Working musicplayer)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8424392013203617434}
+  m_GameObject: {fileID: 673699903441808388}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 168a4e7fda97d434e8eb35dd9ea838f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtSound: {fileID: 8300000, guid: 37da53be39b89754dba8bbd7035a4618, type: 3}
-  dieSound: {fileID: 8300000, guid: 157be102714242249959b428f31c372e, type: 3}
+  hurtSound: {fileID: 8300000, guid: 3580de64a28933445876e755370e4648, type: 3}
+  dieSound: {fileID: 8300000, guid: 48cbbc08ec74f1245964e084f05266ff, type: 3}
   speed: 5
   angularSpeed: 360
   damage: 20
@@ -275,13 +333,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAlive: 1
---- !u!114 &6773338798927843457
+--- !u!114 &2328288820946635295
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8424392013203617434}
+  m_GameObject: {fileID: 673699903441808388}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e41150b640b06d4aa97c57a23b64067, type: 3}
@@ -292,6 +350,7 @@ MonoBehaviour:
   noDMG: 20
   smallDMG: 10
   maxDMG: 0
+<<<<<<< HEAD
 --- !u!54 &9056745005170727268
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1120,6 +1179,9 @@ CharacterJoint:
   m_ConnectedMassScale: 1
 --- !u!1001 &8424392012428016612
 >>>>>>> parent of a3605ce (Added hiace to museum)
+=======
+--- !u!1001 &673699904200532346
+>>>>>>> parent of be7723d (Working musicplayer)
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
