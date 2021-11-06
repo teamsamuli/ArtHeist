@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e41150b640b06d4aa97c57a23b64067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 0}
   health: 100
   noDMG: 20
   smallDMG: 10
