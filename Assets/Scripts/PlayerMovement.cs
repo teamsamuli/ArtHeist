@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
 
-    public float walkSpeed = 10f;
-    public float sprintSpeed = 20f;
+    public float walkSpeed = 4f;
+    public float sprintSpeed = 8f;
     public float jumpHeight = 3f;
     public Transform groundCheck;
     public float groundDistance = 0.45f;
