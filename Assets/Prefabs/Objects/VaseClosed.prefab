@@ -76,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickSource: {fileID: 0}
   scoreAmount: 20
+  effectPrefab: {fileID: 373891271053937867, guid: ec1ce6fc13f464046b63d9a10a46f7be, type: 3}
 --- !u!1001 &8785852333138398640
 PrefabInstance:
   m_ObjectHideFlags: 0

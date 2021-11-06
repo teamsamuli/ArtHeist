@@ -9,6 +9,7 @@ public class DestroyObject_AddScore : MonoBehaviour
 
     public AudioSource tickSource;
     public int scoreAmount = 10;
+    public GameObject effectPrefab;
 
     bool destroyBlock = false;
 
@@ -32,6 +33,10 @@ public class DestroyObject_AddScore : MonoBehaviour
             //Hide mesh & disable collider
             mesh.enabled = false;
             col.enabled = false;
+
+            //Particle effect
+            GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
 
             Destroy(gameObject, 2);
 
