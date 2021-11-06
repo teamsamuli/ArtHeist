@@ -170,6 +170,7 @@ public class Guard : MonoBehaviour
     public void Die()
     {
         isAlive = false;
+        isChasing = false;
         anim.enabled = false;
         agent.enabled = false;
         myCol.enabled = false;
