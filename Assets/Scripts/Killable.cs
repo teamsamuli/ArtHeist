@@ -4,16 +4,30 @@ using UnityEngine;
 
 public class Killable : MonoBehaviour
 {
+    Guard guard;
+    PlayerMovement player;
+
     public float health = 100f;
     public float noDMG = 20f;
     public float smallDMG = 10f;
     public float maxDMG = 0f;
-    public LayerMask objectsMask;
+
+    void Start()
+    {
+        guard = GetComponent<Guard>();
+        player = GetComponent<PlayerMovement>();
+    }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == objectsMask)
+        //Dont do this if player
+        if (player != null)
+            return;
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Objects"))
         {
+            Debug.Log("Took damage :D");
+
             if (collision.relativeVelocity.magnitude > maxDMG)
             {
                 TakeDamage(50);
@@ -26,21 +40,28 @@ public class Killable : MonoBehaviour
             {
                 TakeDamage(0);
             }
-        }
+        }   
     }
 
-
-
-    public void TakeDamage (float amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
         if ( health <= 0f)
         {
+            health = 0;
             Die();
         }
     }
+
     void Die()
     {
-        Destroy(gameObject);
+        if (guard != null)
+        {
+            guard.Die();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }      
     }
 }

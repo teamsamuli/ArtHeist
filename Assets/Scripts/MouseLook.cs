@@ -7,13 +7,11 @@ public class MouseLook : MonoBehaviour
     PickUp pickUp;
     Rigidbody rb;
 
-
     public float mouseSensitivity = 2f;
     public GameObject destination;
     public Transform playerBody;
     public LayerMask Objects;
-
-    
+   
     float mouseX, mouseY;
     float xRotation = 0f;
 
@@ -49,47 +47,50 @@ public class MouseLook : MonoBehaviour
         //Pick up item
         if (Input.GetMouseButtonDown(0))
         {
-           
-
-            if (checkIfInDist())
+            if (IsLookingObject())
             {
-                chargeTimer = 0.0f;
                 pickUp.PickItemUp(destination.transform);
-
             }
         }
-        if (destination.transform.childCount > 0)
+        else
         {
-
-            //Drop item
-            if (Input.GetMouseButtonDown(1))
+            if (destination.transform.childCount > 0)
             {
-                pickUp.DropItem();
-            }
-            //Charge timer starts
-            if (Input.GetMouseButton(0))
-            {
-                chargeTimer += Time.deltaTime;
-                if (chargeTimer >= chargeTimeMax)
+                //Drop item
+                if (Input.GetMouseButtonDown(1))
                 {
-                    chargeTimer = chargeTimeMax;
+                    pickUp.DropItem();
+                }
+
+                //Charge timer starts
+                if (Input.GetMouseButton(0))
+                {
+                    chargeTimer += Time.deltaTime;
+                    if (chargeTimer >= chargeTimeMax)
+                    {
+                        chargeTimer = chargeTimeMax;
+                    }
+                }
+
+                //Throws with the force of the timer
+                if (Input.GetMouseButtonUp(0))
+                {
+                    if (chargeTimer > 0.2f) Throw();
+                    else chargeTimer = 0;
                 }
             }
-            //Throws with the force of the timer
-            if (Input.GetMouseButtonUp(0) && chargeTimer >= 0.2f)
-            {
-                Throw();
-            }
-
         }
     }
+
     void Throw()
     {
-        float throwMult = chargeTimer / chargeTimeMax;
-        pickUp.ThrowItem(transform.forward, throwForce * throwMult);
-        
+        Vector3 throwDir = transform.forward + (Vector3.up / 4f);
+        pickUp.ThrowItem(throwDir, throwForce * GetThrowMult());
+
+        chargeTimer = 0;
     }
-    bool checkIfInDist()
+
+    public bool IsLookingObject()
     {
         RaycastHit hit;
 
@@ -98,6 +99,12 @@ public class MouseLook : MonoBehaviour
             pickUp = hit.transform.GetComponent<PickUp>();
             return true;
         }
+
         return false;
+    }
+
+    public float GetThrowMult()
+    {
+        return chargeTimer / chargeTimeMax;
     }
 }

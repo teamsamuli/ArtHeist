@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 673699903441808410}
   - component: {fileID: 673699903441808408}
   - component: {fileID: 673699903441808411}
+  - component: {fileID: 2328288820946635295}
+  - component: {fileID: 8799528387841629621}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -89,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   angularSpeed: 360
+  damage: 20
   attackDelay: 0.5
   attackRange: 1.4
   spotInterval: 0.5
@@ -96,6 +99,37 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 64
+  isAlive: 1
+--- !u!114 &2328288820946635295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673699903441808388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e41150b640b06d4aa97c57a23b64067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  noDMG: 20
+  smallDMG: 10
+  maxDMG: 0
+--- !u!136 &8799528387841629621
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673699903441808388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &673699904200532346
 PrefabInstance:
   m_ObjectHideFlags: 0

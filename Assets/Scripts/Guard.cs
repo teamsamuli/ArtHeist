@@ -10,9 +10,11 @@ public class Guard : MonoBehaviour
 
     List<Rigidbody> limbs = new List<Rigidbody>();
     List<Collider> cols = new List<Collider>();
+    Collider myCol;
 
     public float speed = 5f;
     public float angularSpeed = 360f;
+    public float damage = 20f;
     public float attackDelay = 0.5f;
     public float attackRange = 1f;
     public float spotInterval = 0.5f;
@@ -42,11 +44,15 @@ public class Guard : MonoBehaviour
         }
 
         //Get limb colliders
+        myCol = GetComponent<Collider>();
         foreach(Collider col in GetComponentsInChildren<Collider>())
         {
-            if (!cols.Contains(col)) cols.Add(col);
+            if (col != myCol)
+            {
+                if (!cols.Contains(col)) cols.Add(col);
 
-            col.isTrigger = true;
+                col.isTrigger = true;
+            } 
         }
 
         //Setup stats for agent
@@ -88,9 +94,7 @@ public class Guard : MonoBehaviour
                     SetTargetDestination(WaypointManager.waypoint.GetRandomWaypoint());
                 }
             }
-
-            //Try to attack
-            if (isChasing)
+            else //Try to attack
             {
                 float distance = Vector3.Distance(transform.position, target.position);
                 if (distance <= attackRange)
@@ -98,12 +102,6 @@ public class Guard : MonoBehaviour
                     Attack();
                 }
             }
-
-            //Debug keys
-            if (Input.GetKeyDown(KeyCode.Space))
-                Attack();
-            else if (Input.GetKeyDown(KeyCode.K))
-                Die();
         }
     }
 
@@ -128,12 +126,19 @@ public class Guard : MonoBehaviour
 
     IEnumerator StartAttacking()
     {
+        //Play animation and stop guard
         anim.SetTrigger("Attack");
         agent.speed = 0;
         attacking = true;
 
-        yield return new WaitForSeconds(attackDelay);
+        yield return new WaitForSeconds(attackDelay / 2);
 
+        //Damage player
+        target.GetComponent<Killable>().TakeDamage(damage);
+
+        yield return new WaitForSeconds(attackDelay / 2);
+
+        //Continue movement
         agent.speed = speed;
         attacking = false;
     }
@@ -143,6 +148,7 @@ public class Guard : MonoBehaviour
         isAlive = false;
         anim.enabled = false;
         agent.enabled = false;
+        myCol.enabled = false;
 
         EnableRagdoll();
     }
