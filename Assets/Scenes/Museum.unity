@@ -580,11 +580,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 27
 =======
       value: 24
 >>>>>>> Stashed changes
+=======
+      value: 26
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 26
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -723,11 +727,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 28
 =======
       value: 25
 >>>>>>> Stashed changes
+=======
+      value: 27
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 27
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -911,11 +919,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 23
 =======
       value: 19
 >>>>>>> Stashed changes
+=======
+      value: 22
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 22
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -980,11 +992,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 11
 =======
       value: 7
 >>>>>>> Stashed changes
+=======
+      value: 10
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 10
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -1111,11 +1127,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 30
 =======
       value: 28
 >>>>>>> Stashed changes
+=======
+      value: 29
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 29
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -1169,6 +1189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d4fbf872cb7d1a4581c99406df8e734, type: 3}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
@@ -1236,6 +1257,8 @@ GameObject:
   m_PrefabInstance: {fileID: 1208276353}
   m_PrefabAsset: {fileID: 0}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
@@ -1378,11 +1401,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 10
 =======
       value: 6
 >>>>>>> Stashed changes
+=======
+      value: 9
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 9
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -1447,11 +1474,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 9
 =======
       value: 5
 >>>>>>> Stashed changes
+=======
+      value: 8
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 8
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -1516,11 +1547,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 21
 =======
       value: 17
 >>>>>>> Stashed changes
+=======
+      value: 20
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 20
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -1585,11 +1620,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 18
 =======
       value: 14
 >>>>>>> Stashed changes
+=======
+      value: 17
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 17
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -1654,11 +1693,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 24
 =======
       value: 20
 >>>>>>> Stashed changes
+=======
+      value: 23
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 23
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -1723,11 +1766,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 12
 =======
       value: 8
 >>>>>>> Stashed changes
+=======
+      value: 11
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 11
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -1932,11 +1979,15 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 9
 =======
   m_RootOrder: 29
 >>>>>>> Stashed changes
+=======
+  m_RootOrder: 7
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
   m_RootOrder: 7
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -2079,11 +2130,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 16
 =======
       value: 12
 >>>>>>> Stashed changes
+=======
+      value: 15
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 15
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -2148,11 +2203,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 14
 =======
       value: 10
 >>>>>>> Stashed changes
+=======
+      value: 13
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 13
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -2217,11 +2276,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 19
 =======
       value: 15
 >>>>>>> Stashed changes
+=======
+      value: 18
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 18
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -2675,11 +2738,15 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 8
 =======
   m_RootOrder: 26
 >>>>>>> Stashed changes
+=======
+  m_RootOrder: 6
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
   m_RootOrder: 6
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -2825,11 +2892,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 26
 =======
       value: 22
 >>>>>>> Stashed changes
+=======
+      value: 25
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 25
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -2956,11 +3027,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 20
 =======
       value: 16
 >>>>>>> Stashed changes
+=======
+      value: 19
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 19
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -3109,11 +3184,15 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 7
 =======
   m_RootOrder: 23
 >>>>>>> Stashed changes
+=======
+  m_RootOrder: 5
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
   m_RootOrder: 5
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -3632,11 +3711,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 15
 =======
       value: 11
 >>>>>>> Stashed changes
+=======
+      value: 14
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 14
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -4204,11 +4287,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 29
 =======
       value: 27
 >>>>>>> Stashed changes
+=======
+      value: 28
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 28
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -4433,11 +4520,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 22
 =======
       value: 18
 >>>>>>> Stashed changes
+=======
+      value: 21
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 21
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -4502,11 +4593,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 25
 =======
       value: 21
 >>>>>>> Stashed changes
+=======
+      value: 24
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 24
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -4750,11 +4845,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 13
 =======
       value: 9
 >>>>>>> Stashed changes
+=======
+      value: 12
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 12
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
@@ -5270,11 +5369,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 17
 =======
       value: 13
 >>>>>>> Stashed changes
+=======
+      value: 16
+>>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
 =======
       value: 16
 >>>>>>> parent of abdb2dd (Merge branch 'main' of https://github.com/teamsamuli/ArtHeist)
