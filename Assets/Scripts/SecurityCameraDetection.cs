@@ -21,6 +21,7 @@ public class SecurityCameraDetection : MonoBehaviour
         Debug.Log("Detaction");
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            WaypointManager.SetPriorityWaypoint(other.gameObject.transform.position);
             Debug.Log("Detaction is player");
         }
     }
