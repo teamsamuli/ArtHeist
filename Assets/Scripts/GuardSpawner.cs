@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GuardSpawner : MonoBehaviour
 {
-
     /// <summary>
     /// Prefab for generating new guards. Fill this in Unity
     /// </summary>
@@ -37,9 +36,6 @@ public class GuardSpawner : MonoBehaviour
     void Start()
     {
         SpawnedGuards = new List<Guard>();
-
-        SpawnNewGuards(NumberOfActiveGuards);
-
         timeTracker = Time.time;
     }
 
@@ -68,6 +64,9 @@ public class GuardSpawner : MonoBehaviour
 
     private void SpawnNewGuards(int howMany)
     {
+        if (!GameManager.game.gameStarted)
+            return;
+
         // If no defined spawn points, then just spawn where the GuardHandler game object is located
         Transform spawnPoint = gameObject.transform;
 
@@ -81,5 +80,16 @@ public class GuardSpawner : MonoBehaviour
             Guard newGuard = Instantiate(GuardTemplate, spawnPoint.position, Quaternion.identity);
             SpawnedGuards.Add(newGuard);
         }
+    }
+
+    public bool IsPlayerSpotted()
+    {
+        bool isSpotted = false;
+        foreach(Guard guard in SpawnedGuards)
+        {
+            if (guard.IsChasing()) isSpotted = true;
+        }
+
+        return isSpotted;
     }
 }

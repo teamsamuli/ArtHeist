@@ -20,7 +20,8 @@ public class PickUp : MonoBehaviour
     {
         //Update positon if object is in hand
         if (transform.parent != null)
-            transform.localPosition = Vector3.zero;
+            if (transform.parent.gameObject.layer == LayerMask.NameToLayer("Player"))
+                transform.localPosition = Vector3.zero;
     }
 
     public void PickItemUp(Transform destination)

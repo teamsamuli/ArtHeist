@@ -80,17 +80,17 @@ public class Guard : MonoBehaviour
             {
                 lastTimeSpotted = Time.time;
 
-                //Check sphere player
+                //Check if player is near
                 Vector3 checkPos = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
                 if (Physics.CheckSphere(checkPos, spotRadius, playerMask))
                 {
                     isChasing = true;
-                    SetTargetDestination(target.position);
+                    SetTargetDestination(target.position);               
                 }
                 else
                 {
                     isChasing = false;
-                }          
+                }                    
             }
 
             //Get next waypoint if not chasing player
@@ -118,6 +118,11 @@ public class Guard : MonoBehaviour
             return true;
 
         return false;
+    }
+
+    public bool IsChasing()
+    {
+        return isChasing;
     }
 
     public void SetTargetDestination(Vector3 targetPos)
@@ -165,6 +170,7 @@ public class Guard : MonoBehaviour
     public void Die()
     {
         isAlive = false;
+        isChasing = false;
         anim.enabled = false;
         agent.enabled = false;
         myCol.enabled = false;
