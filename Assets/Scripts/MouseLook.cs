@@ -49,15 +49,18 @@ public class MouseLook : MonoBehaviour
         //Pick up item
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
+           
 
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, Objects))
+            if (checkIfInDist())
             {
-                Debug.Log(hit.transform.name);
                 chargeTimer = 0.0f;
+<<<<<<< Updated upstream
 
                 pickUp = hit.transform.GetComponent<PickUp>();
                 pickUp.PickItemUp(destination.transform);
+=======
+                pickUp.PickItemUp();
+>>>>>>> Stashed changes
             }
         }
         if (destination.transform.childCount > 0)
@@ -90,5 +93,16 @@ public class MouseLook : MonoBehaviour
         float throwMult = chargeTimer / chargeTimeMax;
         pickUp.ThrowItem(transform.forward, throwForce * throwMult);
         
+    }
+    bool checkIfInDist()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, Objects))
+        {
+            pickUp = hit.transform.GetComponent<PickUp>();
+            return true;
+        }
+        return false;
     }
 }
