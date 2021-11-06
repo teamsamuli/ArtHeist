@@ -54,6 +54,9 @@ public class Killable : MonoBehaviour
             Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
             GameObject effect = Instantiate(effectPrefab, spawnPos, Quaternion.identity);
             Destroy(effect, 1f);
+
+            //Audio
+            guard.PlayHurtAudio(false);
         }
 
         //Decrease health
@@ -69,7 +72,11 @@ public class Killable : MonoBehaviour
     {
         if (guard != null)
         {
+            //Kill guard
             guard.Die();
+
+            //Audio
+            guard.PlayHurtAudio(true);
         }
         else
         {

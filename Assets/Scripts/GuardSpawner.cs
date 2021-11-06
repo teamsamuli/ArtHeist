@@ -82,4 +82,15 @@ public class GuardSpawner : MonoBehaviour
             SpawnedGuards.Add(newGuard);
         }
     }
+
+    public bool IsPlayerSpotted()
+    {
+        bool isSpotted = false;
+        foreach(Guard guard in SpawnedGuards)
+        {
+            if (guard.IsChasing()) isSpotted = true;
+        }
+
+        return isSpotted;
+    }
 }

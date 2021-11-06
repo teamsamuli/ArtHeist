@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Guard : MonoBehaviour
 {
+    AudioSource audioSrc;
     NavMeshAgent agent;
     Animator anim;
 
@@ -12,6 +13,11 @@ public class Guard : MonoBehaviour
     List<Collider> cols = new List<Collider>();
     Collider myCol;
 
+    [Header("Audio")]
+    public AudioClip hurtSound;
+    public AudioClip dieSound;
+
+    [Header("Stats")]
     public float speed = 5f;
     public float angularSpeed = 360f;
     public float damage = 20f;
@@ -31,6 +37,7 @@ public class Guard : MonoBehaviour
     void Start()
     {
         //Get components
+        audioSrc = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         target = FindObjectOfType<PlayerMovement>().transform;
@@ -113,6 +120,11 @@ public class Guard : MonoBehaviour
         return false;
     }
 
+    public bool IsChasing()
+    {
+        return isChasing;
+    }
+
     public void SetTargetDestination(Vector3 targetPos)
     {
         agent.SetDestination(targetPos);
@@ -143,9 +155,22 @@ public class Guard : MonoBehaviour
         attacking = false;
     }
 
+    public void PlayHurtAudio(bool die)
+    {
+        if (die)
+        {
+            audioSrc.PlayOneShot(dieSound);
+        }
+        else
+        {
+            audioSrc.PlayOneShot(hurtSound);
+        }
+    }
+
     public void Die()
     {
         isAlive = false;
+        isChasing = false;
         anim.enabled = false;
         agent.enabled = false;
         myCol.enabled = false;
