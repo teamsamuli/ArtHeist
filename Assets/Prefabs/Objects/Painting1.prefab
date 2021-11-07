@@ -158,7 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21ea4fbd6385c540b9098003468588f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tickSource: {fileID: 0}
   scoreAmount: 10
   effectPrefab: {fileID: 373891271053937867, guid: ec1ce6fc13f464046b63d9a10a46f7be, type: 3}
 --- !u!114 &4968490868986584939
@@ -174,20 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPainting: 1
---- !u!64 &4424935805416241536
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7576725754695473985}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: c25b86b74933d2a458fedcf110683232, type: 3}
 --- !u!1001 &951886106276918773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -253,11 +238,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c15955c5f8c112e44a043a2881db2fee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2b0795f6e209ff4eb2807c424e80976, type: 3}
---- !u!1 &7576725754695473985 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7210307742189137588, guid: e2b0795f6e209ff4eb2807c424e80976, type: 3}
-  m_PrefabInstance: {fileID: 951886106276918773}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7092676019540001275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8024279960583599118, guid: e2b0795f6e209ff4eb2807c424e80976, type: 3}
