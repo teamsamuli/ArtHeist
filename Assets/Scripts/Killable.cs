@@ -80,7 +80,7 @@ public class Killable : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            GameManager.game.LoseGame();
         }      
     }
 }

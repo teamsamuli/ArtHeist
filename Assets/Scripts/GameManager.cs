@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            EndGame();
+
         if (gameStarted)
         {
             //Timer
@@ -40,6 +44,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     gameEnded = true;
+                    LoseGame();
 
                     audioSrc.Stop();
                 }
@@ -53,6 +58,16 @@ public class GameManager : MonoBehaviour
 
         audioSrc.Play();
         audioSrc.loop = true;
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void LoseGame()
+    {
+        SceneManager.LoadScene(3);
     }
 
     public float GetTimeMultLeft()
