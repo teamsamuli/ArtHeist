@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateTicket : MonoBehaviour
 {
-    public float degreesPerSecond = 40;
+    public float degreesPerSecond = 50;
 
     private void Update()
     {
