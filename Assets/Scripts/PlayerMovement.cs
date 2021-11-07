@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     float moveX, moveZ;
     float moveSpeed;
+    bool canEscape;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Escape input
+        if (canEscape)
+            if (Input.GetKeyDown(KeyCode.E))
+                GameManager.game.EndGame();
+
         //Get input
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
@@ -79,5 +85,21 @@ public class PlayerMovement : MonoBehaviour
         UI.UpdateSubtitles(randomSubtitle.text);
 
         audioSrc.PlayOneShot(randomSubtitle.audio, 1f);
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag == "LeaveArea")
+        {
+            canEscape = true;
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        if (collider.tag == "LeaveArea")
+        {
+            canEscape = false;
+        }
     }
 }

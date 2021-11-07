@@ -7,7 +7,6 @@ public class DestroyObject_AddScore : MonoBehaviour
     Collider col;
     MeshRenderer mesh;
 
-    public AudioSource tickSource;
     public int scoreAmount = 10;
     public GameObject effectPrefab;
 
@@ -40,8 +39,7 @@ public class DestroyObject_AddScore : MonoBehaviour
 
             Destroy(gameObject, 2);
 
-            Score.score += scoreAmount;
-            tickSource.Play();
+            GameManager.game.score += scoreAmount;
         }
     }
 

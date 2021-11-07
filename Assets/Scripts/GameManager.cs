@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     AudioSource audioSrc;
 
+    public int score = 0;
     public float maxTime = 5f;
     public bool gameStarted;
     public bool gameEnded;
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
 
         timeLeft = maxTime * 60f;
+
+        PlayerPrefs.SetInt("Score", 0);
     }
 
     // Update is called once per frame
@@ -40,6 +44,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     gameEnded = true;
+                    LoseGame();
 
                     audioSrc.Stop();
                 }
@@ -53,6 +58,17 @@ public class GameManager : MonoBehaviour
 
         audioSrc.Play();
         audioSrc.loop = true;
+    }
+
+    public void EndGame()
+    {
+        PlayerPrefs.SetInt("Score", score);
+        SceneManager.LoadScene(2);
+    }
+
+    public void LoseGame()
+    {
+        SceneManager.LoadScene(3);
     }
 
     public float GetTimeMultLeft()
