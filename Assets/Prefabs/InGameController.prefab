@@ -337,8 +337,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5128cff3aa144bf409f32b0b8cf004f9, type: 2}
   - {fileID: 11400000, guid: b64a5abea1219da48ab1ca738a7c074a, type: 2}
   - {fileID: 11400000, guid: 75457331a45b3204f976bd94cc74d44e, type: 2}
-  walkSpeed: 7
-  sprintSpeed: 10
+  walkSpeed: 6
+  sprintSpeed: 9
   jumpHeight: 7
   groundCheck: {fileID: 607598258282979493}
   groundDistance: 0.45
