@@ -5,7 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
+    AudioSource audioSrc;
+    UIManager UI;
 
+    [Header("Audio")]
+    public Subtitle[] subtitles;
+
+    [Header("Stats")]
     public float walkSpeed = 4f;
     public float sprintSpeed = 8f;
     public float jumpHeight = 3f;
@@ -19,7 +25,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();   
+        rb = GetComponent<Rigidbody>();
+        audioSrc = GetComponent<AudioSource>();
+        UI = transform.parent.GetComponentInChildren<UIManager>();
     }
 
     // Update is called once per frame
@@ -63,5 +71,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Physics.CheckSphere(groundCheck.position, groundDistance, groundMask)) return true;
         return false;
+    }
+
+    public void PlayRandomEstonian()
+    {
+        Subtitle randomSubtitle = subtitles[Random.Range(0, subtitles.Length)];
+        UI.UpdateSubtitles(randomSubtitle.text);
+
+        audioSrc.PlayOneShot(randomSubtitle.audio, 1f);
     }
 }
