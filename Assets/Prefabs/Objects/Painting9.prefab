@@ -63,8 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21ea4fbd6385c540b9098003468588f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tickSource: {fileID: 0}
-  scoreAmount: 10
+  scoreAmount: 50
   effectPrefab: {fileID: 373891271053937867, guid: ec1ce6fc13f464046b63d9a10a46f7be, type: 3}
 --- !u!114 &1866525928624360957
 MonoBehaviour:

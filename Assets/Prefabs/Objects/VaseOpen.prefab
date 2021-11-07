@@ -62,8 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21ea4fbd6385c540b9098003468588f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tickSource: {fileID: 0}
-  scoreAmount: 10
+  scoreAmount: 100
   effectPrefab: {fileID: 373891271053937867, guid: ec1ce6fc13f464046b63d9a10a46f7be, type: 3}
 --- !u!114 &8937725081312699664
 MonoBehaviour:
@@ -77,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509243d9e282cf741be5c628375c140f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPainting: 0
 --- !u!1001 &4874277073320072735
 PrefabInstance:
   m_ObjectHideFlags: 0
