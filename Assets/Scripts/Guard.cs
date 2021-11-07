@@ -18,6 +18,8 @@ public class Guard : MonoBehaviour
     public AudioClip hurtSound;
     public AudioClip dieSound;
     public Subtitle[] subtitles;
+    public float shouttingDelay = 5f;
+    float lastTimeShout;
 
     [Header("Stats")]
     public float speed = 5f;
@@ -132,12 +134,17 @@ public class Guard : MonoBehaviour
 
     void PlayRandomFinnish()
     {
-        Subtitle randomSubtitle = subtitles[Random.Range(0, subtitles.Length)];
-
-        UI.UpdateSubtitles(randomSubtitle.text);
-
         if (!audioSrc.isPlaying)
-            audioSrc.PlayOneShot(randomSubtitle.audio, 1f);
+        {
+            if (Time.time >= lastTimeShout + shouttingDelay)
+            {
+                Subtitle randomSubtitle = subtitles[Random.Range(0, subtitles.Length)];
+
+                UI.UpdateSubtitles(randomSubtitle.text);
+
+                audioSrc.PlayOneShot(randomSubtitle.audio, 1f);
+            }
+        }    
     }
 
     public void SetTargetDestination(Vector3 targetPos)
