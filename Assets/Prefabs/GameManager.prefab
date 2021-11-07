@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8bf07dd726cd8e4a8ffbf9a88233f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 1
+  maxTime: 5
   gameStarted: 0
   gameEnded: 0
 --- !u!82 &6756384482277060716
