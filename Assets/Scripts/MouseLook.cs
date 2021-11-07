@@ -95,6 +95,14 @@ public class MouseLook : MonoBehaviour
         chargeTimer = 0;
     }
 
+    public bool CanRun()
+    {
+        if (destination.transform.childCount > 0)
+            return false;
+
+        return true;
+    }
+
     public bool IsLookingObject()
     {
         RaycastHit hit;

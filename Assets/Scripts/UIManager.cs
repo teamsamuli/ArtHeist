@@ -9,6 +9,10 @@ public class UIManager : MonoBehaviour
     MouseLook mouselook;
     Killable killable;
 
+    public CanvasGroup tutorialGroup;
+    public float tutorialShowTime = 8f;
+    public bool tutorialEnded = false;
+
     [Header("Subtitles")]
     public TextMeshProUGUI subtitleText;
     public CanvasGroup subtitleGroup;
@@ -30,8 +34,13 @@ public class UIManager : MonoBehaviour
         mouselook = transform.parent.GetComponentInChildren<MouseLook>();
         killable = transform.parent.GetComponentInChildren<Killable>();
 
+        tutorialEnded = false;
+
         //Hide subtitle
         subtitleGroup.alpha = 0;
+
+        //Fade tutorial
+        StartCoroutine(FadeTutorialAway());
     }
 
     // Update is called once per frame
@@ -65,5 +74,18 @@ public class UIManager : MonoBehaviour
         subtitleGroup.alpha = 1f;
 
         subtitleText.text = text;
+    }
+
+    IEnumerator FadeTutorialAway()
+    {
+        yield return new WaitForSeconds(tutorialShowTime);
+
+        while (tutorialGroup.alpha > 0)
+        {
+            tutorialGroup.alpha -= Time.deltaTime;
+            yield return null;
+        }
+
+        tutorialEnded = true;
     }
 }

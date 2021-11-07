@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
+    MouseLook mouseLook;
     AudioSource audioSrc;
     UIManager UI;
 
@@ -29,11 +30,15 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         audioSrc = GetComponent<AudioSource>();
         UI = transform.parent.GetComponentInChildren<UIManager>();
+        mouseLook = GetComponentInChildren<MouseLook>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!UI.tutorialEnded)
+            return;
+
         //Escape input
         if (canEscape)
             if (Input.GetKeyDown(KeyCode.E))
@@ -49,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = walkSpeed;
 
             //Override to run speed
-            if (Input.GetKey(KeyCode.LeftShift) && moveZ > 0)
+            if (Input.GetKey(KeyCode.LeftShift) && moveZ > 0 && mouseLook.CanRun())
                 moveSpeed = sprintSpeed;
 
             //Jump
