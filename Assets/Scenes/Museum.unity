@@ -699,8 +699,8 @@ MonoBehaviour:
     releasing it.
 
 
-    When you are ready, come here and press ''E'' to escape before
-    cops arrive.'
+    When you are ready, come near the van and press ''E'' to
+    escape before cops arrive.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -805,8 +805,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2, z: 2}
-  m_Center: {x: -0.5, y: 0, z: 0}
+  m_Size: {x: 2, y: 3, z: 8}
+  m_Center: {x: -1, y: 0, z: 3}
 --- !u!4 &1082389594
 Transform:
   m_ObjectHideFlags: 0

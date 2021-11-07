@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class EndMenu : MonoBehaviour
 {
+    public TextMeshProUGUI scoreText;
+
     public int playSceneIndex = 1;
     public int mainMenuIndex = 0;
 
@@ -13,6 +16,9 @@ public class EndMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        if (scoreText != null)
+            scoreText.text = "You earned " + PlayerPrefs.GetInt("Score") + " euros!";
     }
 
     // Update is called once per frame

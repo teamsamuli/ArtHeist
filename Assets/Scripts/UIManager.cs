@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         //Score text
-        scoreText.text = "Score: " + Score.score;
+        scoreText.text = "Earnings: " + GameManager.game.score;
 
         //Health text
         healthText.text = "Health: " + killable.health.ToString("F0");
