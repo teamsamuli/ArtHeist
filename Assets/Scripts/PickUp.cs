@@ -7,6 +7,8 @@ public class PickUp : MonoBehaviour
     Rigidbody rb;
     Collider col;
 
+    public bool isPainting;
+
     void Start()
     {
         //Get rigidbody and collider
@@ -14,6 +16,11 @@ public class PickUp : MonoBehaviour
         col = GetComponent<Collider>();
         if (col == null) col = GetComponentInChildren<Collider>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+
+        if (isPainting == true)
+        {
+            rb.isKinematic = true;
+        }
     }
 
     void Update()
@@ -22,10 +29,17 @@ public class PickUp : MonoBehaviour
         if (transform.parent != null)
             if (transform.parent.gameObject.layer == LayerMask.NameToLayer("Player"))
                 transform.localPosition = Vector3.zero;
+    
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.relativeVelocity.magnitude > 0) rb.isKinematic = false;
     }
 
     public void PickItemUp(Transform destination)
     {
+        rb.isKinematic = false;
+
         //These ones freeze and disable collider once you pick up the object
         col.enabled = false;
         rb.useGravity = false;
@@ -61,5 +75,5 @@ public class PickUp : MonoBehaviour
 
         rb.AddForce(direction * throwForce, ForceMode.Impulse);
     }
-
+    
 }
